@@ -1,0 +1,26 @@
+﻿@model Practica8Unidad2.Models.Curso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Curso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(" ", "Edit", new { id = Model.Id },new { @class="glyphicon glyphicon-edit" }) |
+    @Html.ActionLink(" Back to List", "Index", "Curso", null, new { @class = "glyphicon glyphicon-home" })
+</p>

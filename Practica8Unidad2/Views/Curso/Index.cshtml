@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Practica8Unidad2.Models.Curso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Cursos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create","Curso",null,new { @class="btn btn-success",@style="margin-bottom:10px" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id=item.Id },new { @class="glyphicon glyphicon-edit" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.Id }, new { @class = "glyphicon glyphicon-th-list" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.Id }, new { @class = "glyphicon glyphicon-trash" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model Practica8Unidad2.Models.Estudiante
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles Estudiante</h2>
+
+<div>
+    <h4>Estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInscripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInscripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(" ", "Edit", new { id = Model.Id },new { @class="glyphicon glyphicon-edit" }) |
+    @Html.ActionLink(" Back to List", "Index", "Estudiante", null, new { @class = "glyphicon glyphicon-home" })
+</p>
